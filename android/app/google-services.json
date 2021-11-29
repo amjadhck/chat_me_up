@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "919622409746",
+    "project_id": "chat-me-up-a4b77",
+    "storage_bucket": "chat-me-up-a4b77.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:919622409746:android:a9ca6da848c656a3af02cb",
+        "android_client_info": {
+          "package_name": "com.example.chat_me_up"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "919622409746-ttq0qp651vbc6clcp0h306en8gceg0rb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCx8NtUXaVSG4-cD4GId4LTnwN4leEJKSM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "919622409746-ttq0qp651vbc6clcp0h306en8gceg0rb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
