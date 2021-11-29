@@ -1,5 +1,6 @@
 import 'package:chat_me_up/screens/auth_screen.dart';
 import 'package:chat_me_up/screens/chat_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -40,11 +41,20 @@ class MyApp extends StatelessWidget {
               ),
             ),
           )),
-      home: AuthScreen(),
-      routes: {
-        AuthScreen.id: (context) => AuthScreen(),
-        ChatScreen.id: (context) => ChatScreen(),
-      },
+      home: StreamBuilder(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return ChatScreen();
+          } else {
+            return AuthScreen();
+          }
+        },
+      ),
+      // routes: {
+      //   AuthScreen.id: (context) => AuthScreen(),
+      //   ChatScreen.id: (context) => ChatScreen(),
+      // },
     );
   }
 }
