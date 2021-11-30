@@ -18,29 +18,34 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Chat Me UP',
       theme: ThemeData(
+        primarySwatch: Colors.pink,
+        //backgroundColor: Colors.pink,--
+        colorScheme: ColorScheme.fromSwatch(
+          //accentColor: Colors.pink,
+          //brightness: Brightness.dark,
           primarySwatch: Colors.pink,
-          //backgroundColor: Colors.pink,--
-          colorScheme: ColorScheme.fromSwatch(
-            //accentColor: Colors.pink,
-            //brightness: Brightness.dark,
-            primarySwatch: Colors.pink,
+        ),
+        buttonTheme: ButtonTheme.of(context).copyWith(
+          buttonColor: Colors.pink,
+          textTheme: ButtonTextTheme.primary,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
           ),
-          buttonTheme: ButtonTheme.of(context).copyWith(
-            buttonColor: Colors.pink,
-            textTheme: ButtonTextTheme.primary,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-            ),
-          ),
-          elevatedButtonTheme: ElevatedButtonThemeData(
-            style: ButtonStyle(
-              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
+        ),
+        textTheme: const TextTheme(
+            headline1: TextStyle(
+          color: Colors.blueGrey,
+        )),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ButtonStyle(
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
               ),
             ),
-          )),
+          ),
+        ),
+      ),
       home: StreamBuilder(
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {

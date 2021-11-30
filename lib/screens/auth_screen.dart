@@ -40,7 +40,7 @@ class _AuthScreenState extends State<AuthScreen> {
           .collection('users')
           .doc(authResult.user!.uid)
           .set({
-        'usernmae': username,
+        'username': username,
         'email': email,
       });
       Fluttertoast.showToast(msg: "Success");
